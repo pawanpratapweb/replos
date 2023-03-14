@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/pawanpratapweb/replos#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "openai": "^3.2.1",
+    "workspace": "file:"
   }
 }

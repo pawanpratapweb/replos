@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +29,7 @@
   box-shadow: var(--boxShadow);
 }
 
-.contextMenu > button {
+.contextMenu>button {
   display: block;
   border: none;
   background: transparent;
@@ -40,12 +41,12 @@
   font-weight: 500; */
 }
 
-.contextMenu > hr {
+.contextMenu>hr {
   margin: 0 10px;
   border: 1px solid #0000000f;
 }
 
-.contextMenu > button:hover {
+.contextMenu>button:hover {
   background: #ffffff2b;
 }
 
@@ -65,12 +66,13 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 13px;
-  left: 13px;
+  bottom: 0;
+  left: 0;
 }
+
 .taskbar {
   height: 39px;
-  width: 50%;
+  /* width: 50%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,15 +82,51 @@
   border: var(--border);
   box-shadow: var(--boxShadow);
   border-radius: 10px;
+  padding: 0 10px;
+  margin-bottom: 13px;
 }
 
-.taskbar > .windowsIcoTaskbar {
+.taskbar>.windowsIcoTaskbar {
   background-image: url("./images/windows.svg");
   height: 25px;
   width: 25px;
   background-size: 100% 100%;
   background-color: transparent;
+  transition: transform 0.1s linear;
   border: none;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+
+}
+
+.taskbarInputParent {
+  display: flex;
+  background: white;
+  align-items: center;
+  justify-content: space-between;
+  height: 85%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.taskbarInput {
+  border: none;
+  outline: none;
+  margin-right: 5px;
+}
+
+
+.taskbarInputParent>img {
+  height: 100%;
+}
+
+.taskbarIcon {
+  height: 21px;
+  margin-left: 15px;
+  transition: transform 0.1s linear;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+
 }
 
 .bottomBarMain {
