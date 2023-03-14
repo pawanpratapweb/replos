@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --mainColor: #ffffffa1;
+  --border: 2px solid #ffffff12;
+  --boxShadow: 0 0 25px -20px #6200ff;
+}
+
+/*context menu*/
+.contextMenu {
+  border: var(--border);
+  background: var(--mainColor);
+  padding: 5px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 9999;
+  width: 250px;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.1s opacity linear;
+  box-shadow: var(--boxShadow);
+}
+
+.contextMenu > button {
+  display: block;
+  border: none;
+  background: transparent;
+  width: 100%;
+  padding: 7px 10px;
+  text-align: left;
+  border-radius: 5px;
+  /* font-size: 14px;
+  font-weight: 500; */
+}
+
+.contextMenu > hr {
+  margin: 0 10px;
+  border: 1px solid #0000000f;
+}
+
+.contextMenu > button:hover {
+  background: #ffffff2b;
+}
+
+.mainContainer {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background: url("https://data.1freewallpapers.com/detail/lake-sunset-horizon-night.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.taskbarParent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 13px;
+  left: 13px;
+}
+.taskbar {
+  height: 39px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  background: var(--mainColor);
+  z-index: 9999;
+  border: var(--border);
+  box-shadow: var(--boxShadow);
+  border-radius: 10px;
+}
+
+.taskbar > .windowsIcoTaskbar {
+  background-image: url("./images/windows.svg");
+  height: 25px;
+  width: 25px;
+  background-size: 100% 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.bottomBarMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  transition: bottom 0.25s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.bottomBar {
+  height: 550px;
+  width: 450px;
+  background: var(--mainColor);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  border: var(--border);
+  box-shadow: var(--boxShadow);
+}
+
+.datetime {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.timeTaskbar {
+  font-size: 75px;
+  font-weight: 100;
+}
+
+.desktop {
+  width: 100%;
+  height: calc(100% - 39px);
+  position: relative;
+  z-index: 5;
+  top: 0;
+}
+
+.app {
+  border: var(--border);
+  height: 450px;
+  width: 600px;
+  background: var(--mainColor);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  margin: 35px;
+  box-shadow: var(--boxShadow);
+}
+
+.appTop {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+
+.closeApp {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 4px;
+  height: 100%;
+  text-transform: capitalize;
+  fill: white;
+  border-radius: 8px;
+  transition: 0.25s background linear;
+}
+
+.closeApp:hover {
+  background: #ff002fc7;
+}
+
+.app iframe {
+  width: 100%;
+  height: calc(100% - 25px);
+}
