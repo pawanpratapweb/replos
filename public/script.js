@@ -80,27 +80,3 @@ taskbarIcon.forEach(elem => {
     }, 100)
   })
 })
-
-
-async function generateText(prompt) {
-  const response = await fetch('https://api.openai.com/v1/text-davinci-002/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer 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'
-    },
-    body: JSON.stringify({
-      prompt: prompt,
-      temperature: 0.5,
-      max_tokens: 100,
-      n: 1,
-      stop: '\n'
-    })
-  });
-
-  const data = await response.json();
-  const text = data.choices[0].text.trim();
-  return text;
-}
-
-console.log(generateText("who are you"))
