@@ -80,3 +80,55 @@ taskbarIcon.forEach(elem => {
     }, 100)
   })
 })
+
+$(function () {
+  $(".app").draggable();
+});
+
+
+
+// const app = document.querySelectorAll(".app");
+// app.forEach((elem => {
+//   // if (elem.getAttribute(name)) {
+//   //   fetch(window.location.origin + "/api?app=" + elem.elem.getAttribute(name))
+//   //     .then((res) => {
+//   //       return res.json();
+//   //     })
+//   //     .then((data) => {
+//   //       elem.childNodes[1].innerHTML = data;
+//   //     })
+//   //     .catch((err) => {
+//   //       console.error(err);
+//   //     });
+//   // }
+//   console.log(elem.getAttribute("name"))
+// }))
+
+const openApp = (appName, width, height) => {
+  const appClass = "app_" + new Date().getTime();
+  const desktop = document.querySelector(".desktop");
+  desktop.insertAdjacentHTML('beforeend', `
+  <div class="app ${appClass}" data-app="${appName}" style="height: ${height}px;width: ${width}px;">
+    <div class="appTop">
+      <p>${appName}</p>
+      <button class="closeApp">
+      </button>
+    </div>
+    <div class="appContent"></div>
+  </div>
+  `);
+  fetch(window.location.origin + "/api?app=" + appName)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      data.code = data.code.replaceAll("_", appName)
+      const app = document.querySelector("." + appClass);
+      app.children[1].innerHTML = data.code;
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
+openApp("notepad", "300", "500");

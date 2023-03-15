@@ -1,37 +1,24 @@
 const express = require("express");
+const fs = require('fs');
+const path = require('path');
 const app = express();
 const port = 3000;
 
-
-// const configuration = new Configuration({
-//   apiKey: "--",
-// });
-// const openai = new OpenAIApi(configuration);
-
-// Serve static files from the public directory
 app.use(express.static("public"));
 
-// Define routes
-// app.get("/aiapi", async (req, res) => {
-//   async function createCompletion(prompt) {
-//     const response = await openai.createCompletion({
-//       model: "text-davinci-003",
-//       prompt: prompt,
-//       temperature: 0,
-//       max_tokens: 27,
-//       top_p: 1,
-//       frequency_penalty: 0,
-//       presence_penalty: 0,
-//     });
-//     return response.data.choices;
-//   }
+app.get('/api', (req, res) => {
+  if (req.query.app) {
+    fs.readFile(__dirname + "/apps/" + req.query.app + ".html", 'utf-8', (err, data) => {
+      res.json({
+        name: req.query.app,
+        code: data
+      });
+    });
 
-//   createCompletion(req.query.prompt).then((response) => {
-//     res.send(response);
-//   }).catch((error) => {
-//     console.log(error);
-//   });
-// });
+  }
+});
+
+app.use('/apps', express.static(path.join(__dirname, 'apps')));
 
 // Start server
 app.listen(port, () => {

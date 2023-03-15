@@ -178,8 +178,7 @@
 
 .app {
   border: var(--border);
-  height: 450px;
-  width: 600px;
+
   background: var(--mainColor);
   border-radius: 10px;
   backdrop-filter: blur(10px);
@@ -196,24 +195,26 @@
   justify-content: space-between;
   padding-left: 10px;
   font-size: 14px;
+  text-transform: capitalize;
 }
 
 .closeApp {
   background: transparent;
   border: none;
-  font-size: 16px;
   padding: 4px;
   height: 100%;
-  fill: red;
   border-radius: 8px;
   transition: background 0.25s linear;
+  background-image: url("./images/closeapp.svg");
+  background-size: 100% 100%;
+  aspect-ratio: 1/1;
 }
 
 .closeApp:hover {
-  background: #d6e1ffc7;
+  background-color: #ff1621c7;
 }
 
-.app iframe {
+.app .appContent {
   width: 100%;
   height: calc(100% - 25px);
 }

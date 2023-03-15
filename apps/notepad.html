@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+    ._mainContainer * {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    ._mainContainer {
+      height: 100vh;
+      width: 100%;
+    }
+
+    ._topNav {
+      width: 100%;
+      background-color: #075e54;
+      color: white
+    }
+
+    ._topNavFirst,
+    ._topNavSecond {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 45px;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    ._topNavFirst>h1 {
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    ._topNavIcons {
+      display: flex;
+      align-items: center;
+    }
+
+    ._topNavIcons>.fa-ellipsis-vertical {
+      margin-left: 15px;
+      font-size: 19px;
+    }
+
+    ._topNavSecond {
+      padding: 0 20px;
+      height: 37px;
+    }
+
+    ._topNavSecond>button {
+      height: 100%;
+      padding: 0 15px;
+      border: none;
+      background: transparent;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    ._topNavSecond>button:hover {
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <div class="_mainContainer">
+    <div class="_topNav">
+      <div class="_topNavFirst">
+
+        <h1>Whatsapp</h1>
+        <div class="_topNavIcons">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+
+        </div>
+      </div>
+      <div class="_topNavSecond">
+        <button class="_topNavButtons">chats</button>
+        <button class="_topNavButtons">status</button>
+        <button class="_topNavButtons">calls</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
